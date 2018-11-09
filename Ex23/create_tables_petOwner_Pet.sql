@@ -1,0 +1,22 @@
+CREATE TABLE PET_OWNER(
+	OwnerID			INT				NOT NULL IDENTITY(1, 1),
+	OwnerLastName	Char(25)		NOT NULL,
+	OwnerFirstName	Char(25)		NOT NULL,
+	OwnerPhone		Char(12)		NULL,
+	OwnerEmail		VarChar(100)	NOT NULL UNIQUE,
+	CONSTRAINT		OWNER_PK		PRIMARY KEY(OwnerID)
+);
+
+CREATE TABLE PET(
+	PetID			INT				NOT NULL IDENTITY(1, 1),
+	PetName			Char(25)		NOT NULL,
+	PetType			Char(25)		NOT NULL,
+	PetBreed		Char(50)		NOT NULL,
+	PetDOB			Date			NULL,
+	PetWeight		Decimal(18,1)	NOT NULL,
+	OwnerId			INT				NOT NULL,
+	CONSTRAINT		PET_PK			PRIMARY KEY(PetID),
+	CONSTRAINT		OWNER_FK		FOREIGN KEY(OwnerId)
+						REFERENCES PET_OWNER(OwnerID)
+						ON DELETE NO ACTION
+);
