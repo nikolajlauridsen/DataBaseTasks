@@ -1,0 +1,1 @@
+SELECT PetName, PetBreed, PetType from PET WHERE NOT PetType = 'Cat' AND NOT PetType = 'Dog' AND NOT PetType = 'fish'; 

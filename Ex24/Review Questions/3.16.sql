@@ -1,0 +1,1 @@
+SELECT COUNT(PetID) FROM PET AS PetCount;
