@@ -1,0 +1,1 @@
+SELECT COUNT(DISTINCT PetBreed) as NumberOfBreeds from PET;

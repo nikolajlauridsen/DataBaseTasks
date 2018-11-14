@@ -1,0 +1,1 @@
+SELECT PetName, PetBreed from PET ORDER BY PetName;
