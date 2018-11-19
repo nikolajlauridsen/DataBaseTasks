@@ -1,0 +1,10 @@
+CREATE TABLE Project(
+ExamID				INT					NOT NULL,
+MaxGroupSize		INT					NOT NULL,
+MaxPages			INT					NOT NULL,
+-- PK
+CONSTRAINT			PROJECT_PK			PRIMARY KEY(ExamID),
+-- FK
+CONSTRAINT			PROJECT_FK			FOREIGN KEY(ExamID)
+					REFERENCES Exam(ExamID)
+);

@@ -1,0 +1,12 @@
+CREATE TABLE MachineField(
+VIN				NVarChar(50)			NOT NULL,
+FieldID			INT					NOT NULL,
+-- PK
+CONSTRAINT		MachineField_PK		PRIMARY KEY(VIN, FieldID),
+-- FK
+CONSTRAINT		MachineF_FK			FOREIGN KEY(VIN)
+				REFERENCES	Machine(VIN),
+
+CONSTRAINT		FieldF_FK			FOREIGN KEY(FieldID)
+				REFERENCES	Field(FieldID)
+);

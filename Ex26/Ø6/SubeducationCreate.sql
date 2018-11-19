@@ -1,0 +1,12 @@
+CREATE TABLE Subject_Education(
+SubjectID		INT				NOT NULL,
+EducationID		INT				NOT NULL,
+-- PK
+CONSTRAINT		SUBEDUCATION_PK	PRIMARY KEY(SubjectID, EducationID),
+-- FK
+CONSTRAINT		SUBJECTS_FK		FOREIGN KEY(SubjectID)
+				REFERENCES	Subjects(SubjectID),
+
+CONSTRAINT		EDUCAT_FK		FOREIGN KEY(EducationID)
+				REFERENCES	Education(EducationID)
+);
